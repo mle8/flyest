@@ -1,0 +1,27 @@
+name: flyest_env
+channels:
+  - bioconda
+  - conda-forge
+  - r
+dependencies:
+  - python=3.10
+  - mlst
+  - tqdm
+  - mummer4
+  - berokka
+  - bwa
+  - samtools
+  - polypolish=0.5.0
+  - medaka
+  - pilon
+  - openjdk
+  - seqkit
+  - pandas
+  - pip
+  - numpy
+  - dnaapler=0.8.1
+  - flye=2.9.3
+  - pymummer
+  - bedtools
+  - freebayes
+prefix: /rsrch8/home/hlth_prof/mle8/miniforge3/envs/flyest_env

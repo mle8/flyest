@@ -1,0 +1,86 @@
+=== PATHS ===
+--- python ---
+/rsrch8/home/hlth_prof/mle8/miniforge3/envs/flyest_env/bin/python
+--- flye ---
+/rsrch8/home/hlth_prof/mle8/miniforge3/envs/flyest_env/bin/flye
+--- medaka ---
+/rsrch8/home/hlth_prof/mle8/miniforge3/envs/flyest_env/bin/medaka
+--- medaka_consensus ---
+/rsrch8/home/hlth_prof/mle8/miniforge3/envs/flyest_env/bin/medaka_consensus
+--- dnaapler ---
+/rsrch8/home/hlth_prof/mle8/miniforge3/envs/flyest_env/bin/dnaapler
+--- berokka ---
+/rsrch8/home/hlth_prof/mle8/miniforge3/envs/flyest_env/bin/berokka
+--- pilon ---
+/rsrch8/home/hlth_prof/mle8/miniforge3/envs/flyest_env/bin/pilon
+--- minimap2 ---
+/rsrch8/home/hlth_prof/mle8/miniforge3/envs/flyest_env/bin/minimap2
+--- samtools ---
+/rsrch8/home/hlth_prof/mle8/miniforge3/envs/flyest_env/bin/samtools
+--- bwa ---
+/rsrch8/home/hlth_prof/mle8/miniforge3/envs/flyest_env/bin/bwa
+--- polypolish ---
+/rsrch8/home/hlth_prof/mle8/miniforge3/envs/flyest_env/bin/polypolish
+--- freebayes ---
+/rsrch8/home/hlth_prof/mle8/miniforge3/envs/flyest_env/bin/freebayes
+--- bedtools ---
+/rsrch8/home/hlth_prof/mle8/miniforge3/envs/flyest_env/bin/bedtools
+--- mlst ---
+/rsrch8/home/hlth_prof/mle8/miniforge3/envs/flyest_env/bin/mlst
+--- nucmer ---
+/rsrch8/home/hlth_prof/mle8/mummer4/bin/nucmer
+--- perl ---
+/rsrch8/home/hlth_prof/mle8/miniforge3/envs/flyest_env/bin/perl
+--- bc ---
+/usr/bin/bc
+
+=== RUNTIME VERSIONS ===
+Python 3.10.14
+2.9.3-b1797
+medaka 2.0.1
+dnaapler, version 0.8.1
+berokka 0.2.3
+Pilon version 1.24 Thu Jan 28 13:00:45 2021 -0500
+2.28-r1209
+samtools 1.21
+Using htslib 1.21
+Copyright (C) 2024 Genome Research Ltd.
+
+Samtools compilation details:
+    Features:       build=configure curses=yes 
+    CC:             /opt/conda/conda-bld/samtools_1726175734089/_build_env/bin/x86_64-conda-linux-gnu-cc
+    CPPFLAGS:       -DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /rsrch8/home/hlth_prof/mle8/miniforge3/envs/flyest_env/include
+    CFLAGS:         -Wall -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /rsrch8/home/hlth_prof/mle8/miniforge3/envs/flyest_env/include -fdebug-prefix-map=/opt/conda/conda-bld/samtools_1726175734089/work=/usr/local/src/conda/samtools-1.21 -fdebug-prefix-map=/rsrch8/home/hlth_prof/mle8/miniforge3/envs/flyest_env=/usr/local/src/conda-prefix
+    LDFLAGS:        -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,--allow-shlib-undefined -Wl,-rpath,/rsrch8/home/hlth_prof/mle8/miniforge3/envs/flyest_env/lib -Wl,-rpath-link,/rsrch8/home/hlth_prof/mle8/miniforge3/envs/flyest_env/lib -L/rsrch8/home/hlth_prof/mle8/miniforge3/envs/flyest_env/lib
+    HTSDIR:         
+    LIBS:           
+    CURSES_LIB:     -ltinfow -lncursesw
+
+HTSlib compilation details:
+    Features:       build=configure libcurl=yes S3=yes GCS=yes libdeflate=yes lzma=yes bzip2=yes plugins=yes plugin-path=/rsrch8/home/hlth_prof/mle8/miniforge3/envs/flyest_env/libexec/htslib htscodecs=1.6.1
+    CC:             /opt/conda/conda-bld/htslib_1726172129301/_build_env/bin/x86_64-conda-linux-gnu-cc
+    CPPFLAGS:       -DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /rsrch8/home/hlth_prof/mle8/miniforge3/envs/flyest_env/include
+    CFLAGS:         -Wall -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /rsrch8/home/hlth_prof/mle8/miniforge3/envs/flyest_env/include -fdebug-prefix-map=/opt/conda/conda-bld/htslib_1726172129301/work=/usr/local/src/conda/htslib-1.21 -fdebug-prefix-map=/rsrch8/home/hlth_prof/mle8/miniforge3/envs/flyest_env=/usr/local/src/conda-prefix -fvisibility=hidden
+    LDFLAGS:        -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,--allow-shlib-undefined -Wl,-rpath,/rsrch8/home/hlth_prof/mle8/miniforge3/envs/flyest_env/lib -Wl,-rpath-link,/rsrch8/home/hlth_prof/mle8/miniforge3/envs/flyest_env/lib -L/rsrch8/home/hlth_prof/mle8/miniforge3/envs/flyest_env/lib -fvisibility=hidden -rdynamic
+
+HTSlib URL scheme handlers present:
+    built-in:	 file, preload, data
+    libcurl:	 gophers, smtp, wss, smb, rtsp, tftp, pop3, smbs, imaps, pop3s, ws, ftps, ftp, gopher, imap, http, https, sftp, smtps, dict, scp, mqtt, telnet
+    S3 Multipart Upload:	 s3w+https, s3w+http, s3w
+    Amazon S3:	 s3+https, s3, s3+http
+    Google Cloud Storage:	 gs+http, gs+https, gs
+    crypt4gh-needed:	 crypt4gh
+    mem:	 mem
+
+Program: bwa (alignment via Burrows-Wheeler transformation)
+Version: 0.7.18-r1243-dirty
+Contact: Heng Li <hli@ds.dfci.harvard.edu>
+
+Polypolish v0.5.0
+version:  v1.3.8
+bedtools v2.31.1
+mlst 2.23.0
+4.0.1
+
+This is perl 5, version 32, subversion 1 (v5.32.1) built for x86_64-linux-thread-multi
+bc 1.07.1
