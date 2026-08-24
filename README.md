@@ -36,7 +36,17 @@ The pipeline requires the following programs to be available in the system's PAT
 
 The pipeline utilizes a custom script `clean.py` adapted from `circlator-v1.5.5` to remove highly similar contigs based on Nucmer identity and lengths. The `polca_mod.sh` short-read polishing script is adapted from MaSuRCA-v4.1.0 to work within the flyest environment and output files in a user created output directory within the pipeline. I would highly recommend creating a conda environment and using the conda pack tool with the **flyest_v0.1.tar.gz** package available in this GitHub. If installing manually, a list of all dependencies is included in the **flyest_v0.1_conda_env.yml** file. The `ufasta` binary is in the **binaries** directory. 
 
-Also note that the Conda package only includes a limited number of Medaka models and that institutional firewalls may impede from downloading models if running on an HPC. I recommend downloading their models from their data directory and placing model files in the appropriate directory. 
+## Medaka model
+
+Download an appropriate Medaka model separately. Pass the path to its model archive to `-m/--mod`; Flyest does not download a model automatically. The pipeline exits before starting if the supplied file does not exist.
+
+For example, a model argument has this form:
+
+```text
+-m /path/to/medaka_model.tar.gz
+```
+
+Choose a model appropriate for the basecaller and sequencing chemistry used to produce the ONT reads.
 
 ## Function and Usage
 The script takes various command-line arguments to control its behavior:
@@ -52,7 +62,7 @@ Options:
   -n, --min         Minimum coverage depth per sequence as a fraction of the overall draft assembly mean coverage depth [Default=0.2; i.e. 20%]. Use a value of '0.001' for no minimum coverage depth.
   -l, --len         Minimum contig length per sequence [Default=1000].
   --meta            Meta option for Flye [Default is not set] - Good for uneven/low coverage assemblies.
-  -m, --mod         Medaka model [Default=r1041_e82_400bps_sup_v4.2.0].
+  -m, --mod         Path to Medaka model.
   --nid             Nucmer min_id parameter for removing highly similar contigs based on percent minimum nucleotide identity shared [Default = 95].
   --nlen            Nucmer min_length parameter for removing highly similar contigs based on percent minimum contig length shared [Default = 90].
   --no-qc           Disable quick QC script [Default is on].
@@ -90,3 +100,5 @@ flyest_pipeline.sh -i long_reads.fastq.gz -1 pe_forward.fastq.gz -2 pe_reverse.f
 
 ## Note
 The script assumes that necessary software and reference files are available or configured in the system, including a Medaka model and necessary genome assembly files.
+Input reads may be gzip-compressed. The output directory must not already exist. Run either script with `--help` for filtering, Flye metagenome mode, quick-QC, and other options.
+Quick QC reports contig lengths and ONT read-depth statistics. Disable it with `--no-qc` if these supplementary metrics are not needed.
