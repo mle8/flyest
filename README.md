@@ -6,7 +6,6 @@
 This pipeline was created for the purpose of polishing bacterial draft genome assemblies from the Flye assembler using either Oxford Nanopore Technologies long-reads only (Flyer) or a hybrid approach that combines ONT long-read and Illumina short-read sequencing data. The pipeline integrates multiple tools and performs iterative rotations of the assembly to improve the quality of the consensus genome. This script is inspired by looking at best practices as of 2023-07-17 for both long-read only and hybrid assembly approaches with a lot of inspiration from the work of Ryan Wick. 
 
 ## Author
-
 [William Shropshire](https://twitter.com/The_Real_Shrops)
 
 ## Scope
@@ -22,7 +21,16 @@ The pipeline covers the following steps:
 9. Final rotation of the assembly using dnaapler for proper contig orientation using dnaA and repA genes.
 10. Quick QC to determine putative bacterial species, sequence type, contig number, contig length, and mean coverage depth of consensus assembly. 
 
-## Installation and Dependencies
+## Installation
+Clone the repository and create the pinned Conda environment:
+
+```bash
+git clone https://github.com/mle8/flyest.git
+cd flyest
+conda env create -f environment.yml
+conda activate flyest
+```
+## Dependencies
 The pipeline requires the following programs to be available in the system's PATH:
 - Flye
 - Dnaapler 
@@ -34,10 +42,9 @@ The pipeline requires the following programs to be available in the system's PAT
 - Polypolish (Flyest dependency)
 - MLST
 
-The pipeline utilizes a custom script `clean.py` adapted from `circlator-v1.5.5` to remove highly similar contigs based on Nucmer identity and lengths. The `polca_mod.sh` short-read polishing script is adapted from MaSuRCA-v4.1.0 to work within the flyest environment and output files in a user created output directory within the pipeline. I would highly recommend creating a conda environment and using the conda pack tool with the **flyest_v0.1.tar.gz** package available in this GitHub. If installing manually, a list of all dependencies is included in the **flyest_v0.1_conda_env.yml** file. The `ufasta` binary is in the **binaries** directory. 
+The pipeline utilizes a custom script `clean.py` adapted from `circlator-v1.5.5` to remove highly similar contigs based on Nucmer identity and lengths. The `polca_mod.sh` short-read polishing script is adapted from MaSuRCA-v4.1.0 to work within the flyest environment and output files in a user created output directory within the pipeline. The `ufasta` binary is in the **binaries** directory. 
 
 ## Medaka model
-
 Download an appropriate Medaka model separately. Pass the path to its model archive to `-m/--mod`; Flyest does not download a model automatically. The pipeline exits before starting if the supplied file does not exist.
 
 For example, a model argument has this form:
